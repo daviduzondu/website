@@ -1,6 +1,6 @@
 ---
 title: Creating a Twitter Spaces Downloader Using Node.js and FFmpeg
-description: Slide It Like You Mean It
+description: 
 tags: [javascript, guides, webdev]
 date: 28 June 2024
 ---
