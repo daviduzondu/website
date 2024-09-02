@@ -1,0 +1,15 @@
+{{define "content"}}
+<h1>{{ .List.Name }}</h1>
+<p>{{ .List.Description }}</p>
+ {{range .List.Pages }}
+
+ <div class="post-item">
+  <span>{{ .Frontmatter.Date }}</span>
+  <h3 style="margin: 0">
+   <a href="{{ .Href }}">
+    {{ .Frontmatter.Title }}
+   </a>
+  </h3>
+ </div>
+ {{end}}
+{{end}}

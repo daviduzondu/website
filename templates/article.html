@@ -1,0 +1,16 @@
+{{ define "content" }}
+<article>
+  <h1>{{ .Page.Frontmatter.Title }}</h1>
+  <span class="post-date">
+    {{ if .Page.Frontmatter.Date }}
+      {{ .Page.Frontmatter.Date }}
+    {{ end }}
+  </span>
+  <div>
+    {{ .Page.Html }}
+  </div>
+  {{ if ne .Page.SrcName "index.md" }}
+    {{ template "github-page" . }}
+  {{ end }}
+</article>
+{{ end }}

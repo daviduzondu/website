@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>{{ .Site.Title }}</title>
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Spline+Sans:wght@300..700&display=swap');
+
+  * {
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+
+  :root {
+   --gray: rgb(48, 55, 58);
+   --code: rgb(197, 51, 6);
+  }
+
+  .post-item {
+   display: grid;
+   grid-template-columns: 30% 70%;
+   gap: 5px;
+   margin-bottom: 20px;
+  }
+
+  .post-item span {
+   display: flex;
+   align-items: center;
+  }
+
+
+  h1 {
+   margin: 30px 0px 20px 0px;
+  }
+
+  .post-date {
+   font-size: 1em;
+  }
+
+  body {
+   font-family: "Spline Sans", sans-serif;
+   background-color: rgba(236, 242, 248, 0.543);
+   color: var(--gray);
+   font-weight: 300;
+   width: 40%;
+   padding: 20px;
+   overflow-wrap: break-word;
+   margin: 0 auto;
+  }
+
+  nav {
+   display: flex;
+   font-size: 1.1em;
+   gap: 10px;
+  }
+
+  @media screen and (max-width: 1000px) {
+   body {
+    width: 100%;
+    margin: 0px;
+   }
+
+   .post-item {
+    grid-template-columns: 1fr;
+   }
+  }
+
+  li {
+   list-style: circle;
+   margin: 0;
+   padding: 0;
+  }
+
+  li::marker {
+   margin: 0;
+   padding: 0;
+  }
+
+  h2,
+  h3,
+  h4 {
+   font-weight: 400;
+   margin-bottom: 10px;
+   color: rgb(46, 120, 173);
+  }
+
+  h2 {
+   margin-top: 40px;
+  }
+
+  h1 {
+   color: rgb(17, 80, 125);
+   font-weight: 400;
+   font-size: 2.5em;
+  }
+
+  pre {
+   overflow: auto;
+   max-height: 70vh;
+   border-radius: 5px;
+   padding-left: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 15px;
+  }
+
+  p {
+   font-size: 18px;
+   line-height: 30px;
+  }
+
+  code {
+   font-family: "Spline Sans Mono", monospace;
+   font-optical-sizing: auto;
+  }
+  
+  p code {
+   font-size: 15px;
+   background-color: white;
+   padding: 3px;
+   border-radius: 4px;
+   border: 1px solid #d4c9c9;
+   color: var(--code);
+   line-height: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+  }
+
+  a {
+   color: rgb(3, 112, 189);
+  }
+
+  a:hover {
+   background-color: rgb(0 122 208);
+   color: white
+  }
+
+  img:has(+ em) {
+   border: 0.1px dotted rgb(0 122 208);
+   width: 100%;
+   max-height: 50vh;
+   object-fit: contain;
+  }
+
+  img+em {
+   margin-top: -5px;
+   display: flex;
+   font-size: 14px;
+   align-items: center;
+   justify-content: center;
+  }
+
+  .gh-page {
+   font-size: 14px;
+   text-align: center;
+  }
+
+  .footnotes *{
+   font-size: 15px;
+  }
+ </style>
+
+</head>
+
+<body>
+ {{template "nav" .}}
+ <main>{{block "content" .}}File not found{{end}}</main>
+</body>
+
+
+</html>
