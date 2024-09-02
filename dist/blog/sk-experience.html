@@ -67,6 +67,7 @@
    .post-item {
     grid-template-columns: 1fr;
     margin-bottom: 30px;
+    font-family: 17px;
    }
   }
 
@@ -118,7 +119,7 @@
    font-family: "Spline Sans Mono", monospace;
    font-optical-sizing: auto;
   }
-  
+
   p code {
    font-size: 15px;
    background-color: white;
@@ -141,7 +142,7 @@
   }
 
   img:has(+ em) {
-   border: 0.1px dotted rgb(0 122 208);
+   border: 0.1px dashed rgb(0 122 208);
    width: 100%;
    max-height: 50vh;
    object-fit: contain;
@@ -160,8 +161,33 @@
    text-align: center;
   }
 
-  .footnotes *{
+  .footnotes * {
    font-size: 15px;
+  }
+
+  .post-metadata {
+   display: flex;
+   gap: 20px;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+
+  .post-tags {
+   display: flex;
+   gap: 10px;
+   margin: 10px 0px 10px 0px;
+  }
+
+  .post-tag {
+   text-decoration: none;
+   padding: 4px;
+   border: 0.1px dashed rgb(0 122 208);
+   border-radius: 3px;
+  }
+
+  .post-tag::before {
+   content: "#";
+   margin-right: 3px;
   }
  </style>
 
@@ -176,14 +202,23 @@
 
  <main>
 <article>
-  <h1>My internship experience at Startup Kano</h1>
-  <span class="post-date">
-    
-      5 December 2023
-    
-  </span>
-  <div>
-    <p>The SIWES program is a program that every computer science student must undergo in this third year of education. This was to provide us with an opportunity to apply whatever we learnt in class, in an actual work environment. It's a 6-month program and we were given log books to record what we did on each day. I did my SIWES/internship at the Startup Kano Hub, and the experience was okay.</p>
+ <h1>My internship experience at Startup Kano</h1>
+ 
+ <div class="post-metadata">
+  <div class="post-date">
+   5 December 2023
+  </div>
+  <div class="post-tags">
+   
+   
+   <a href="/tags/intership.html" class="post-tag">intership</a>
+   
+   
+  </div>
+ </div>
+ 
+ <div>
+  <p>The SIWES program is a program that every computer science student must undergo in this third year of education. This was to provide us with an opportunity to apply whatever we learnt in class, in an actual work environment. It's a 6-month program and we were given log books to record what we did on each day. I did my SIWES/internship at the Startup Kano Hub, and the experience was okay.</p>
 <p>So, the internship began on 4th December, 2023. I and other folks from BUK, met with the founder, Aysha Tofa. She told us that we are expected to be at the hub from Monday to Thursday, at about 9AM. She also told us that we will be given a certificate at the end of the program and as a project, we were to make an Android app for the hub. When, I heard that I was happy because I've been looking for an excuse to get into Android development. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>I'll be honest, the first few weeks were boring. Everything moved slow. Perhaps it was because of the holiday season (remember, this was December). I kept myself busy by watching a freeCodeCamp course on development Node.js and Express. Backend development is something I am interested in because I genuinely do not think that I am built for frontend development. Skill issue. I know.</p>
 <h2>An experience I will never forget</h2>
@@ -204,16 +239,16 @@
 </ol>
 </div>
 
-  </div>
-  
-    
+ </div>
+ 
+ 
 <div class="gh-page">
  <a href="https://github.com/daviduzondu/website/tree/master/www/content/_blog/sk-experience.md">
   View this page on GitHub
  </a>
 </div>
 
-  
+ 
 </article>
 </main>
 </body>

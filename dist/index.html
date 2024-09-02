@@ -67,6 +67,7 @@
    .post-item {
     grid-template-columns: 1fr;
     margin-bottom: 30px;
+    font-family: 17px;
    }
   }
 
@@ -118,7 +119,7 @@
    font-family: "Spline Sans Mono", monospace;
    font-optical-sizing: auto;
   }
-  
+
   p code {
    font-size: 15px;
    background-color: white;
@@ -141,7 +142,7 @@
   }
 
   img:has(+ em) {
-   border: 0.1px dotted rgb(0 122 208);
+   border: 0.1px dashed rgb(0 122 208);
    width: 100%;
    max-height: 50vh;
    object-fit: contain;
@@ -160,8 +161,33 @@
    text-align: center;
   }
 
-  .footnotes *{
+  .footnotes * {
    font-size: 15px;
+  }
+
+  .post-metadata {
+   display: flex;
+   gap: 20px;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+
+  .post-tags {
+   display: flex;
+   gap: 10px;
+   margin: 10px 0px 10px 0px;
+  }
+
+  .post-tag {
+   text-decoration: none;
+   padding: 4px;
+   border: 0.1px dashed rgb(0 122 208);
+   border-radius: 3px;
+  }
+
+  .post-tag::before {
+   content: "#";
+   margin-right: 3px;
   }
  </style>
 
@@ -176,12 +202,10 @@
 
  <main>
 <article>
-  <h1>David Uzondu</h1>
-  <span class="post-date">
-    
-  </span>
-  <div>
-    <p>Hello there! Welcome to my website. I am a final year Computer Science student at Bayero University, Kano. I am interesting in Backend Development and Machine Learning especially with languages like Go and TypeScript. I love to write. You can check out some of my work at <a href="https://muo.com/author/david-uzondu">Make Use Of</a>.</p>
+ <h1>David Uzondu</h1>
+ 
+ <div>
+  <p>Hello there! Welcome to my website. I am a final year Computer Science student at Bayero University, Kano. I am interesting in Backend Development and Machine Learning especially with languages like Go and TypeScript. I love to write. You can check out some of my work at <a href="https://muo.com/author/david-uzondu">Make Use Of</a>.</p>
 <h2>Contact</h2>
 <p>You can reach out to me via email at daviduzondu [at] duck [dot] com. If you want something less formal, check out my <a href="https://twitter.com/swtbtl">Twitter</a> or my <a href="https://github.com/daviduzondu">GitHub</a>.</p>
 <h2>Projects</h2>
@@ -199,8 +223,8 @@
 </ul>
 <p>An Online Test Management System. This was my final year project. I had lots of fun building it. The frontend is built with Next.js and the backend runs on Nest.js</p>
 
-  </div>
-  
+ </div>
+ 
 </article>
 </main>
 </body>

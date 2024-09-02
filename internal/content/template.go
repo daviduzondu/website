@@ -44,4 +44,20 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string) {
 		err = os.WriteFile(list.Dest, buf.Bytes(), os.ModePerm)
 		utils.CheckErr(err)
 	}
+	for _, tag := range siteData.AllTags {
+		var buf bytes.Buffer
+		var data struct {
+			Tag  structs.Tag
+			Site structs.SiteData
+		}
+		data.Tag = tag
+		data.Site = *siteData
+
+		tmpl, err := template.ParseFiles(filepath.Join(basePath, "templates", "base.html"), filepath.Join(basePath, "templates", "partials", "nav.html"), filepath.Join(basePath, "templates", "tag.html"))
+		utils.CheckErr(err)
+		err = tmpl.Execute(&buf, data)
+		utils.CheckErr(err)
+		err = os.WriteFile(tag.Dest, buf.Bytes(), os.ModePerm)
+		utils.CheckErr(err)
+	}
 }

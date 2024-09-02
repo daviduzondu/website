@@ -1,0 +1,15 @@
+{{define "content"}}
+<h1>Posts tagged "{{ .Tag.Name }}"</h1>
+<p></p>
+ {{range .Tag.Pages }}
+
+ <div class="post-item">
+  <span>{{ .Frontmatter.Date }}</span>
+  <p style="margin: 0">
+   <a href="{{ .Href }}">
+    {{ .Frontmatter.Title }}
+   </a>
+  </p>
+ </div>
+ {{end}}
+{{end}}

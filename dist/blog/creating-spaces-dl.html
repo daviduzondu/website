@@ -67,6 +67,7 @@
    .post-item {
     grid-template-columns: 1fr;
     margin-bottom: 30px;
+    font-family: 17px;
    }
   }
 
@@ -118,7 +119,7 @@
    font-family: "Spline Sans Mono", monospace;
    font-optical-sizing: auto;
   }
-  
+
   p code {
    font-size: 15px;
    background-color: white;
@@ -141,7 +142,7 @@
   }
 
   img:has(+ em) {
-   border: 0.1px dotted rgb(0 122 208);
+   border: 0.1px dashed rgb(0 122 208);
    width: 100%;
    max-height: 50vh;
    object-fit: contain;
@@ -160,8 +161,33 @@
    text-align: center;
   }
 
-  .footnotes *{
+  .footnotes * {
    font-size: 15px;
+  }
+
+  .post-metadata {
+   display: flex;
+   gap: 20px;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+
+  .post-tags {
+   display: flex;
+   gap: 10px;
+   margin: 10px 0px 10px 0px;
+  }
+
+  .post-tag {
+   text-decoration: none;
+   padding: 4px;
+   border: 0.1px dashed rgb(0 122 208);
+   border-radius: 3px;
+  }
+
+  .post-tag::before {
+   content: "#";
+   margin-right: 3px;
   }
  </style>
 
@@ -176,14 +202,25 @@
 
  <main>
 <article>
-  <h1>Creating a Twitter Spaces Downloader Using Node.js and FFmpeg</h1>
-  <span class="post-date">
-    
-      28 June 2024
-    
-  </span>
-  <div>
-    <p><img src="https://i.imgur.com/j4gD4fw.jpg" alt="virgin api consumer vs chad independent scraper"> <em>A meme I found on 4chan</em></p>
+ <h1>Creating a Twitter Spaces Downloader Using Node.js and FFmpeg</h1>
+ 
+ <div class="post-metadata">
+  <div class="post-date">
+   28 June 2024
+  </div>
+  <div class="post-tags">
+   
+   
+   <a href="/tags/javascript.html" class="post-tag">javascript</a>
+   
+   <a href="/tags/webdev.html" class="post-tag">webdev</a>
+   
+   
+  </div>
+ </div>
+ 
+ <div>
+  <p><img src="https://i.imgur.com/j4gD4fw.jpg" alt="virgin api consumer vs chad independent scraper"> <em>A meme I found on 4chan</em></p>
 <p>Hello, My name is David Uzondu and I am a final year Computer Science student at Bayero University Kano. I was recently approved for the back-end track on the HNG internship program.</p>
 <p>One reason I am excited to participate in the <a href="https://hng.tech/internship">HNG internship program</a> is to gain hands-on experience and deepen my skills in back-end development. This opportunity will work on real-world projects, learn best practices, and collaborate with industry professionals. I also signed up for <a href="https://hng.tech/premium">HNG Premium</a> which will give me access to exclusive opportunities like certificates, reference letters, and the latest job openings.</p>
 <p>A few weeks ago, I wanted to listen to a Twitter Space conversation but had network issues. I noticed the space was recorded, so I bookmarked the link to return when my connection was stable.</p>
@@ -564,16 +601,16 @@
 </ol>
 </div>
 
-  </div>
-  
-    
+ </div>
+ 
+ 
 <div class="gh-page">
  <a href="https://github.com/daviduzondu/website/tree/master/www/content/_blog/creating-spaces-dl.md">
   View this page on GitHub
  </a>
 </div>
 
-  
+ 
 </article>
 </main>
 </body>

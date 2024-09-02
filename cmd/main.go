@@ -10,17 +10,16 @@ import (
 	"github.com/daviduzondu/website/internal/utils"
 )
 
+var BasePath = utils.First(os.Getwd())
+var OutputPath = filepath.Join(BasePath, "dist")
+
 func main() {
+	siteData := config.LoadConfig(filepath.Join(BasePath, "config.json"))
+	utils.EnsureDirExists(OutputPath)
+	os.RemoveAll(OutputPath)
 
-	basePath := utils.First(os.Getwd())
-	outputPath := filepath.Join(basePath, "dist")
-
-	siteData := config.LoadConfig(filepath.Join(basePath, "config.json"))
-	utils.EnsureDirExists(outputPath)
-	os.RemoveAll(outputPath)
-
-	contentPath := filepath.Join(basePath, "/www/content/")
+	contentPath := filepath.Join(BasePath, "/www/content/")
 	content.Traverse(contentPath, &siteData)
 	siteData.Year = time.Now().Year()
-	content.ApplyTemplate(&siteData, basePath)
+	content.ApplyTemplate(&siteData, BasePath)
 }

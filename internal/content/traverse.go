@@ -20,7 +20,7 @@ func Traverse(dir string, siteData *structs.SiteData) {
 	for _, entry := range entries {
 		if entry.IsDir() {
 			Traverse(filepath.Join(dir, entry.Name()), siteData)
-		} else if filepath.Ext(entry.Name()) == ".md" && !strings.HasPrefix(entry.Name(), "~") {
+		} else if filepath.Ext(entry.Name()) == ".md" && !strings.HasPrefix(entry.Name(), "~") && !strings.HasPrefix(entry.Name(), "-") {
 			processMarkdown(dir, parent, entry.Name(), siteData)
 		}
 	}
@@ -62,6 +62,28 @@ func processMarkdown(dir, parent, fileName string, siteConfig *structs.SiteData)
 		list.Name = strings.ToUpper(string(filepath.Base(filepath.Dir(htmlPath))[0])) + filepath.Base(filepath.Dir(htmlPath))[1:]
 		list.Dest = dest
 		siteConfig.AllLists = append(siteConfig.AllLists, list)
+	}
+
+	if len(matter.Tags) > 0 {
+		for _, m := range matter.Tags {
+			var tag structs.Tag
+
+			for _, t := range siteConfig.AllTags {
+				if t.Name == m {
+					tag = t
+				}
+			}
+			dest := filepath.Join(utils.First(os.Getwd()), "dist", "tags", m+".html")
+			utils.EnsureDirExists(filepath.Dir(dest))
+			utils.CheckErr(err)
+
+			tag.Name = m
+			tag.Pages = append(tag.Pages, page)
+			tag.Dest = dest
+			tag.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(dest)), filepath.Base(dest))
+			page.Tags = append(page.Tags, tag)
+			siteConfig.AllTags = append(siteConfig.AllTags, tag)
+		}
 	}
 
 	siteConfig.AllPages = append(siteConfig.AllPages, page)

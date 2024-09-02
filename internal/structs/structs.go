@@ -15,12 +15,21 @@ type SiteData struct {
 	Year              int
 	AllPages          []Page
 	AllLists          []List
+	AllTags           []Tag
+}
+
+type Tag struct {
+	Pages []Page
+	Name  string
+	Dest  string
+	Href  string
 }
 
 type Page struct {
 	Frontmatter     Matter
 	Html            template.HTML
-	Series          any
+	Series          string
+	Tags            []Tag
 	Src             string
 	Dest            string
 	Href            string
