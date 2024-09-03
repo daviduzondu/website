@@ -12,6 +12,7 @@
   * {
    padding: 0;
    box-sizing: border-box;
+   scroll-behavior: smooth;
   }
 
 
@@ -212,6 +213,10 @@
    content: "#";
    margin-right: 3px;
   }
+
+  .hide-anchors  a.anchor {
+   display: none;
+  }
  </style>
 
 </head>
@@ -224,7 +229,7 @@
 </nav>
 
  <main>
-<article>
+<article class="">
  <h1>Creating a Twitter Spaces Downloader Using Node.js and FFmpeg</h1>
  
  <div class="post-metadata">
@@ -252,7 +257,7 @@
 <p>A few weeks ago, I wanted to listen to a Twitter Space conversation but had network issues. I noticed the space was recorded, so I bookmarked the link to return when my connection was stable.</p>
 <p>The next day, I tried to listen again, but the Twitter app wouldn’t load the space, which frustrated me. Since Twitter doesn’t allow downloading recorded spaces for later, I decided to use <code>yt-dlp</code>—a command-line tool that downloads media from sites like YouTube, Vimeo, and Twitter. However, there was a bug in the version of <code>yt-dlp</code> installed on my machine that caused the program to crash whenever I tried to download a space.</p>
 <p>So I figured, why not create my own space downloader tool? It would be great practice for Node.js and TypeScript.</p>
-<h2>Reverse-engineering the Twitter Internal API</h2>
+<h2 id="reverse-engineering-the-twitter-internal-api"><a class="anchor" href="#reverse-engineering-the-twitter-internal-api">¶</a> Reverse-engineering the Twitter Internal API</h2>
 <p>On my Chrome desktop, I loaded the Twitter Space page while listening for the network requests in the DevTools. When you open a recorded Twitter Space link in Chrome or any other browser, here's what happens (assuming you are signed in):</p>
 <p>Twitter loads a modal on the <code>/peek</code> route. This modal shows important information about the space, like the host and speakers, and provides a big blue &quot;Play recording&quot; button.</p>
 <p>When the button is clicked, a GET request is sent to <code>https://x.com/i/api/graphql/SL4eyLXdr1zWZVpXRhxZ4Q?variables=&lt;variables&gt;&amp;features=&lt;features&gt;</code>, where <code>variables</code> and <code>features</code> are query string parameters. <code>variables</code> is encoded with the following key-value pair:</p>
@@ -308,7 +313,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre><p>The most interesting thing to take note of is <code>source.location</code>, because it holds the actual URL to the hosted M3U8 file. From here things become a bit easier. You can copy this URL and run the following:</p>
 <pre tabindex="0" style="color:#ebdbb2;background-color:#282828;"><code><span style="display:flex;"><span>yt-dlp &lt;m3u8_url&gt;
-</span></span></code></pre><h2>Automating the entire thing with a CLI</h2>
+</span></span></code></pre><h2 id="automating-the-entire-thing-with-a-cli"><a class="anchor" href="#automating-the-entire-thing-with-a-cli">¶</a> Automating the entire thing with a CLI</h2>
 <p>What do you do when you can't access a Twitter Space without logging in and the official Twitter API costs nearly double your country's minimum wage? Naturally, you turn to web scraping. I started the project and created a <code>Downloader</code> class that will be instantiated later by the Command Line Interface (CLI).</p>
 <pre tabindex="0" style="color:#ebdbb2;background-color:#282828;"><code><span style="display:flex;"><span><span style="color:#fe8019">export</span> <span style="color:#fe8019">class</span> Downloader <span style="color:#fe8019">implements</span> DownloaderInterface {
 </span></span><span style="display:flex;"><span>  <span style="color:#fe8019">private</span> username: <span style="color:#fabd2f">string</span>;
@@ -611,8 +616,11 @@
 </span></span></code></pre><p>When the code is transpiled. In my terminal, I can run the following from the project root:</p>
 <pre tabindex="0" style="color:#ebdbb2;background-color:#282828;"><code><span style="display:flex;"><span>node dist/cli/cli.js --username &lt;username&gt; --password &lt;password&gt; -i &lt;twitter_space_id&gt;
 </span></span></code></pre><p>The <code>twitter_space_id</code> can be obtained from the URL of the Space. For example, in <a href="https://x.com/i/spaces/1OyKAWgagpqJb">https://x.com/i/spaces/1OyKAWgagpqJb</a>, the ID is 1OyKAWgagpqJb.</p>
-<p><img src="https://i.imgur.com/AOx5txi.png" alt=""><em>Agba developer!</em></p>
-<h2>Future plans</h2>
+<figure>
+<img src="https://i.imgur.com/AOx5txi.png" alt="">
+<figcaption><p>Agba developer!</p></figcaption>
+</figure>
+<h2 id="future-plans"><a class="anchor" href="#future-plans">¶</a> Future plans</h2>
 <p>In the future, I hope to turn this into a full NPM package that you can install globally by running a command like <code>npm install -g spaces-dl</code>. I also want to implement alternative login systems in case the default login system with username and password fails.</p>
 <p>Since this is a side project, there are some 'missing' features, like the fact that you cannot provide a custom path for the output audio. I also want to improve the path system to work on Windows machines. You can find the full source code on <a href="https://github.com/daviduzondu/spaces-dl">GitHub</a>.</p>
 <div class="footnotes" role="doc-endnotes">

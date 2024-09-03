@@ -15,6 +15,8 @@ import (
 	"github.com/yuin/goldmark"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
+	"github.com/yuin/goldmark/parser"
+	"go.abhg.dev/goldmark/anchor"
 )
 
 func EnsureDirExists(dir string) {
@@ -60,9 +62,10 @@ func GetPageUrlOnGitHub(dir string, siteData *structs.SiteData) string {
 
 func ConvertToHtml(content []byte) []byte {
 	var buf bytes.Buffer
-	err := goldmark.New(goldmark.WithExtensions(
+	err := goldmark.New(goldmark.WithParserOptions(parser.WithAutoHeadingID()), goldmark.WithExtensions(
 		extension.GFM,
 		figure.Figure,
+		&anchor.Extender{Position: anchor.Before},
 		extension.Footnote,
 		highlighting.NewHighlighting(
 			highlighting.WithStyle("gruvbox"),

@@ -429,7 +429,8 @@ node dist/cli/cli.js --username <username> --password <password> -i <twitter_spa
 
 The `twitter_space_id` can be obtained from the URL of the Space. For example, in https://x.com/i/spaces/1OyKAWgagpqJb, the ID is 1OyKAWgagpqJb.
 
-![](https://i.imgur.com/AOx5txi.png)_Agba developer!_
+![](https://i.imgur.com/AOx5txi.png)
+Agba developer!
 
 ## Future plans
 In the future, I hope to turn this into a full NPM package that you can install globally by running a command like `npm install -g spaces-dl`. I also want to implement alternative login systems in case the default login system with username and password fails. 

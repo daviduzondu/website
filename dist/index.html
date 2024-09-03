@@ -12,6 +12,7 @@
   * {
    padding: 0;
    box-sizing: border-box;
+   scroll-behavior: smooth;
   }
 
 
@@ -212,6 +213,10 @@
    content: "#";
    margin-right: 3px;
   }
+
+  .hide-anchors  a.anchor {
+   display: none;
+  }
  </style>
 
 </head>
@@ -224,24 +229,24 @@
 </nav>
 
  <main>
-<article>
+<article class="hide-anchors">
  <h1>David Uzondu</h1>
  
  <div>
   <p>Hello there! Welcome to my website. I am a final year Computer Science student at Bayero University, Kano. I am interesting in Backend Development and Machine Learning especially with languages like Go and TypeScript. I love to write. You can check out some of my work at <a href="https://muo.com/author/david-uzondu">Make Use Of</a>.</p>
-<h2>Contact</h2>
+<h2 id="contact"><a class="anchor" href="#contact">¶</a> Contact</h2>
 <p>You can reach out to me via email at daviduzondu [at] duck [dot] com. If you want something less formal, check out my <a href="https://twitter.com/swtbtl">Twitter</a> or my <a href="https://github.com/daviduzondu">GitHub</a>.</p>
-<h2>Projects</h2>
+<h2 id="projects"><a class="anchor" href="#projects">¶</a> Projects</h2>
 <p>Here's some of the most important things I have worked on over the years.</p>
 <ul>
 <li>
-<h3>spaces-dl</h3>
+<h3 id="spaces-dl"><a class="anchor" href="#spaces-dl">¶</a> spaces-dl</h3>
 </li>
 </ul>
 <p>A dead simple Twitter Spaces downloader. I built it while I was learning TypeScript. The code is super ugly, but hey it works. You can check it out on NPM.</p>
 <ul>
 <li>
-<h3>OTMS</h3>
+<h3 id="otms"><a class="anchor" href="#otms">¶</a> OTMS</h3>
 </li>
 </ul>
 <p>An Online Test Management System. This was my final year project. I had lots of fun building it. The frontend is built with Next.js and the backend runs on Nest.js</p>
