@@ -157,15 +157,22 @@
    color: white
   }
 
-  img:has(+ em) {
+
+  figure {
+   margin: 0;
+   margin-top: 15px;
+  }
+
+  figure img {
    border: 0.1px dashed rgb(0 122 208);
    width: 100%;
    max-height: 50vh;
    object-fit: contain;
   }
 
-  img+em {
-   margin-top: -5px;
+  figure figcaption p {
+   margin-top: 5px;
+   font-style: italic;
    display: flex;
    font-size: 14px;
    align-items: center;
@@ -236,7 +243,10 @@
  </div>
  
  <div>
-  <p><img src="https://i.imgur.com/j4gD4fw.jpg" alt="virgin api consumer vs chad independent scraper"> <em>A meme I found on 4chan</em></p>
+  <figure>
+<img src="https://i.imgur.com/j4gD4fw.jpg" alt="virgin api consumer vs chad independent scraper">
+<figcaption><p>A meme I found on 4chan</p></figcaption>
+</figure>
 <p>Hello, My name is David Uzondu and I am a final year Computer Science student at Bayero University Kano. I was recently approved for the back-end track on the HNG internship program.</p>
 <p>One reason I am excited to participate in the <a href="https://hng.tech/internship">HNG internship program</a> is to gain hands-on experience and deepen my skills in back-end development. This opportunity will work on real-world projects, learn best practices, and collaborate with industry professionals. I also signed up for <a href="https://hng.tech/premium">HNG Premium</a> which will give me access to exclusive opportunities like certificates, reference letters, and the latest job openings.</p>
 <p>A few weeks ago, I wanted to listen to a Twitter Space conversation but had network issues. I noticed the space was recorded, so I bookmarked the link to return when my connection was stable.</p>

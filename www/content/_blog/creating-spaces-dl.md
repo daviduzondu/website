@@ -5,7 +5,8 @@ tags: [javascript, webdev]
 date: 28 June 2024
 ---
 
-![virgin api consumer vs chad independent scraper](https://i.imgur.com/j4gD4fw.jpg) _A meme I found on 4chan_
+![virgin api consumer vs chad independent scraper](https://i.imgur.com/j4gD4fw.jpg)
+A meme I found on 4chan 
 
 Hello, My name is David Uzondu and I am a final year Computer Science student at Bayero University Kano. I was recently approved for the back-end track on the HNG internship program.
 

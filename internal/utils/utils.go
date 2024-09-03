@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/daviduzondu/website/internal/structs"
+	figure "github.com/mangoumbrella/goldmark-figure"
 	"github.com/yuin/goldmark"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
@@ -59,9 +60,9 @@ func GetPageUrlOnGitHub(dir string, siteData *structs.SiteData) string {
 
 func ConvertToHtml(content []byte) []byte {
 	var buf bytes.Buffer
-
 	err := goldmark.New(goldmark.WithExtensions(
 		extension.GFM,
+		figure.Figure,
 		extension.Footnote,
 		highlighting.NewHighlighting(
 			highlighting.WithStyle("gruvbox"),
