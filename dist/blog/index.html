@@ -24,11 +24,16 @@
    display: grid;
    grid-template-columns: 30% 70%;
    gap: 5px;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
+  }
+
+  .post-item div a {
+   font-size: 20px;
   }
 
   .post-item span {
    display: flex;
+   font-size: 17px;
    align-items: center;
   }
 
@@ -67,7 +72,6 @@
   }
 
   .active {
-   pointer-events: none;
    text-decoration: underline 3px;
   }
 
@@ -80,7 +84,6 @@
    .post-item {
     grid-template-columns: 1fr;
     margin-bottom: 30px;
-    font-family: 17px;
    }
   }
 
@@ -220,21 +223,21 @@
 
  <div class="post-item">
   <span>28 June 2024</span>
-  <p style="margin: 0">
+  <div style="margin: 0">
    <a href="/blog/creating-spaces-dl.html">
     Creating a Twitter Spaces Downloader Using Node.js and FFmpeg
    </a>
-  </p>
+  </div>
  </div>
  
 
  <div class="post-item">
   <span>5 December 2023</span>
-  <p style="margin: 0">
+  <div style="margin: 0">
    <a href="/blog/sk-experience.html">
     My internship experience at Startup Kano
    </a>
-  </p>
+  </div>
  </div>
  
 </main>
