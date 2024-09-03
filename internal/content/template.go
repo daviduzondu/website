@@ -16,9 +16,11 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string) {
 		var data struct {
 			Page structs.Page
 			Site structs.SiteData
+			Type string
 		}
 		data.Page = page
 		data.Site = *siteData
+		data.Type = "page"
 
 		tmpl, err := template.ParseFiles(filepath.Join(basePath, "templates", "base.html"), filepath.Join(basePath, "templates", "partials", "nav.html"), filepath.Join(basePath, "templates", "article.html"), filepath.Join(basePath, "templates", "partials", "github-page.html"))
 		utils.CheckErr(err)
@@ -33,9 +35,11 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string) {
 		var data struct {
 			List structs.List
 			Site structs.SiteData
+			Type string
 		}
 		data.List = list
 		data.Site = *siteData
+		data.Type = "list"
 
 		tmpl, err := template.ParseFiles(filepath.Join(basePath, "templates", "base.html"), filepath.Join(basePath, "templates", "partials", "nav.html"), filepath.Join(basePath, "templates", "list.html"))
 		utils.CheckErr(err)
@@ -49,9 +53,11 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string) {
 		var data struct {
 			Tag  structs.Tag
 			Site structs.SiteData
+			Type string
 		}
 		data.Tag = tag
 		data.Site = *siteData
+		data.Type = "tag"
 
 		tmpl, err := template.ParseFiles(filepath.Join(basePath, "templates", "base.html"), filepath.Join(basePath, "templates", "partials", "nav.html"), filepath.Join(basePath, "templates", "tag.html"))
 		utils.CheckErr(err)

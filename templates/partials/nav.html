@@ -1,6 +1,6 @@
 {{define "nav"}}
- <nav>
-    <a href='/'>Home</a>
-    <a href='/blog'>Blog</a>
+<nav>
+    <a href="/" class="{{if (and (eq .Type "page") (eq .Page.Active "/dist"))}}active{{end}}">Home</a>
+    <a href="/blog" class="{{if (or (and (eq .Type "list") (eq .List.Name "Blog")) (and (eq .Type "page") (eq .Page.Active "/blog")))}}active{{end}}">Blog</a>
 </nav>
 {{end}}

@@ -52,10 +52,23 @@
    margin: 0 auto;
   }
 
+  nav a {
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 20px;
+  }
+
   nav {
    display: flex;
-   font-size: 1.1em;
-   gap: 10px;
+   font-size: 1.2em;
+   gap: 15px;
+  }
+
+  .active {
+   pointer-events: none;
+   text-decoration: underline 3px;
   }
 
   @media screen and (max-width: 1000px) {
@@ -174,7 +187,7 @@
 
   .post-tags {
    display: flex;
-   gap: 10px;
+   gap: 15px;
    margin: 10px 0px 10px 0px;
   }
 
@@ -195,9 +208,9 @@
 
 <body>
  
- <nav>
-    <a href='/'>Home</a>
-    <a href='/blog'>Blog</a>
+<nav>
+    <a href="/" class="">Home</a>
+    <a href="/blog" class="active">Blog</a>
 </nav>
 
  <main>

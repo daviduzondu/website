@@ -30,6 +30,7 @@ type Page struct {
 	Html            template.HTML
 	Series          string
 	Tags            []Tag
+	Active          string
 	Src             string
 	Dest            string
 	Href            string
