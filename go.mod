@@ -1,6 +1,6 @@
 module github.com/daviduzondu/website
 
-go 1.22
+go 1.22.5
 
 require (
 	github.com/adrg/frontmatter v0.2.0
