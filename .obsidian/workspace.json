@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "www/content/_blog/testing obsidian.md",
+                "file": "www/content/_blog/!testing obsidian.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "www/content/_blog/testing obsidian.md",
+                "file": "www/content/_blog/!testing obsidian.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "www/content/_blog/testing obsidian.md",
+                "file": "www/content/_blog/!testing obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "www/content/_blog/testing obsidian.md"
+                "file": "www/content/_blog/!testing obsidian.md"
               }
             }
           },
@@ -155,10 +155,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4fd85b566d8e5daa",
+  "active": "4114aa73441ab8f1",
   "lastOpenFiles": [
+    "netlify.toml",
     "www/content/_blog/testing-hack-md.md",
-    "www/content/_blog/testing obsidian.md",
+    "www/content/_blog/!testing obsidian.md",
     "www/content/_blog/sk-experience.md"
   ]
 }
