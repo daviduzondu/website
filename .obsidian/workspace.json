@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "www/content/_blog/~testing obsidian.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "www/content/_blog/~testing obsidian.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "www/content/_blog/~testing obsidian.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "www/content/_blog/~testing obsidian.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -157,8 +157,8 @@
   },
   "active": "4fd85b566d8e5daa",
   "lastOpenFiles": [
-    "Untitled.md",
     "www/content/_blog/~testing obsidian.md",
+    "Untitled.md",
     "netlify.toml",
     "www/content/_blog/testing-hack-md.md",
     "www/content/_blog/sk-experience.md"
