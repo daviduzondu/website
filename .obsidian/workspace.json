@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "2862815e284b33bd",
+        "id": "100a4d26b5231633",
         "type": "tabs",
         "children": [
           {
-            "id": "b1f09912c8029579",
+            "id": "73fd84bb6a354fdc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "www/content/_blog/hng-11.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "www/content/_blog/hng-11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "www/content/_blog/hng-11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "www/content/_blog/hng-11.md"
+              }
             }
           },
           {
@@ -147,8 +155,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4114aa73441ab8f1",
+  "active": "73fd84bb6a354fdc",
   "lastOpenFiles": [
+    "().md",
+    "www/content/_blog/hng-11.md",
+    "www/content/_blog/creating-spaces-dl.md",
+    "www/content/_blog/sk-experience.md",
+    "image",
+    "image/hng-11-1725458794782.jpeg",
+    "www/assets/Screenshot from 2024-09-04 14-28-29.png",
+    "www/content/_blog/showcase.md",
     "dist/index.html",
     "dist/tags/javascript.html",
     "dist/tags/internship.html",
@@ -161,7 +177,6 @@
     "www/content/_blog/~testing obsidian.md",
     "Untitled.md",
     "netlify.toml",
-    "www/content/_blog/testing-hack-md.md",
-    "www/content/_blog/sk-experience.md"
+    "www/content/_blog/testing-hack-md.md"
   ]
 }
