@@ -98,5 +98,9 @@ func getFrontmatter(data io.Reader) ([]byte, structs.Matter) {
 	var matter structs.Matter
 	content, err := frontmatter.Parse(data, &matter)
 	utils.CheckErr(err)
+
+	if matter.Date != "" {
+		utils.ValidateDate(matter.Date)
+	}
 	return content, matter
 }

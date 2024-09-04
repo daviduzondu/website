@@ -3,13 +3,14 @@
 <p>{{ .List.Description }}</p>
  {{range .List.Pages }}
 
+ 
  <div class="post-item">
   <span>{{ .Frontmatter.Date }}</span>
-  <div style="margin: 0">
+  <p style="margin: 0">
    <a href="{{ .Href }}">
     {{ .Frontmatter.Title }}
    </a>
-  </div>
+  </p>
  </div>
  {{end}}
 {{end}}

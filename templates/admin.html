@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div style="display: flex; width: 100%; height: 100vh;">
+        <!-- Left Column: File Browser -->
+        <div style="flex: 1; border-right: 1px solid black; padding: 10px;" hx-get="files">
+        </div>
+        
+        <!-- Middle Column: Textbox -->
+        <div style="flex: 2; border-right: 1px solid black; padding: 10px;">
+            <textarea id="textBox1" rows="10" cols="30"></textarea>
+        </div>
+        
+        <!-- Right Column: Textbox -->
+        <div style="flex: 2; padding: 10px;">
+            <textarea id="textBox2" rows="10" cols="30"></textarea>
+        </div>
+    </div>
+</body>
+</html>

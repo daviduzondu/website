@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/daviduzondu/website/internal/structs"
 	figure "github.com/mangoumbrella/goldmark-figure"
@@ -19,6 +20,12 @@ import (
 	"github.com/yuin/goldmark/parser"
 	"go.abhg.dev/goldmark/anchor"
 )
+
+func ValidateDate(dateStr string) bool {
+	_, err := time.Parse("2 January 2006", dateStr)
+	CheckErr(err)
+	return true
+}
 
 func copyFile(src string, dst string) error {
 	srcFile, err := os.Open(src)

@@ -5,12 +5,53 @@ import (
 	"html/template"
 	"os"
 	"path/filepath"
+	"sort"
+	"time"
 
 	"github.com/daviduzondu/website/internal/structs"
 	"github.com/daviduzondu/website/internal/utils"
 )
 
+func sortDates(pages []structs.Page) []structs.Page {
+	parseDate := func(dateStr string) (time.Time, bool) {
+		if dateStr == "" {
+			return time.Time{}, false
+		}
+		date, err := time.Parse("2 January 2006", dateStr)
+		return date, err == nil
+	}
+
+	sort.Slice(pages, func(i, j int) bool {
+		dateI, validI := parseDate(pages[i].Frontmatter.Date)
+		dateJ, validJ := parseDate(pages[j].Frontmatter.Date)
+
+		if !validI && !validJ {
+			return false
+		}
+		if !validI {
+			return false
+		}
+		if !validJ {
+			return true
+		}
+
+		return dateI.After(dateJ)
+	})
+
+	return pages
+}
+
 func ApplyTemplate(siteData *structs.SiteData, basePath string, outputPath string) {
+	siteData.AllPages = sortDates(siteData.AllPages)
+
+	for _, list := range siteData.AllLists {
+		list.Pages = sortDates(list.Pages)
+	}
+
+	for _, tags := range siteData.AllTags {
+		tags.Pages = sortDates(tags.Pages)
+	}
+
 	for _, page := range siteData.AllPages {
 		var buf bytes.Buffer
 		var data struct {

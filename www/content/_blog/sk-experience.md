@@ -2,8 +2,8 @@
 title: My internship experience at Startup Kano
 description: 
 draft: false
-date: 5 December 2023
-tags: [intership]
+date: 12 May 2024
+tags: [internship, javascript]
 author: David Uzondu
 ---
 
