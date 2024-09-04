@@ -50,5 +50,6 @@ type Matter struct {
 	Title       string   `yaml:"title"`
 	Description string   `yaml:"description"`
 	Tags        []string `yaml:"tags"`
+	Draft       *bool    `yaml:"draft"`
 	Date        string   `yaml:"date"`
 }

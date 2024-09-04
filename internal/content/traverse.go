@@ -42,56 +42,59 @@ func processMarkdown(dir, parent, fileName string, siteConfig *structs.SiteData)
 	}
 
 	content, matter := getFrontmatter(strings.NewReader(string(data)))
-	page.Frontmatter = matter
-	page.Html = template.HTML(string(utils.ConvertToHtml(content)))
-	page.Src = mdPath
-	page.Dest = htmlPath
-	page.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(htmlPath)), filepath.Base(htmlPath))
-	page.PageUrlOnGitHub = utils.GetPageUrlOnGitHub(mdPath, siteConfig)
-	page.SrcName = fileName
-	page.Active = filepath.Dir(page.Href)
 
-	if strings.HasPrefix(filepath.Base(filepath.Dir(mdPath)), "_") {
-		var dest string = filepath.Join(strings.Replace(filepath.Dir(htmlPath), fileName, "", 1), "index.html")
-		for _, l := range siteConfig.AllLists {
-			if l.Dest == dest {
-				list = l
-			}
-		}
+	if !*matter.Draft {
+		page.Frontmatter = matter
+		page.Html = template.HTML(string(utils.ConvertToHtml(content)))
+		page.Src = mdPath
+		page.Dest = htmlPath
+		page.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(htmlPath)), filepath.Base(htmlPath))
+		page.PageUrlOnGitHub = utils.GetPageUrlOnGitHub(mdPath, siteConfig)
+		page.SrcName = fileName
+		page.Active = filepath.Dir(page.Href)
 
-		list.Pages = append(list.Pages, page)
-		list.Name = strings.ToUpper(string(filepath.Base(filepath.Dir(htmlPath))[0])) + filepath.Base(filepath.Dir(htmlPath))[1:]
-		list.Dest = dest
-		siteConfig.AllLists = append(siteConfig.AllLists, list)
-	}
-
-	if len(matter.Tags) > 0 {
-		for _, m := range matter.Tags {
-			var tag structs.Tag
-
-			for _, t := range siteConfig.AllTags {
-				if t.Name == m {
-					tag = t
+		if strings.HasPrefix(filepath.Base(filepath.Dir(mdPath)), "_") {
+			var dest string = filepath.Join(strings.Replace(filepath.Dir(htmlPath), fileName, "", 1), "index.html")
+			for _, l := range siteConfig.AllLists {
+				if l.Dest == dest {
+					list = l
 				}
 			}
-			dest := filepath.Join(utils.First(os.Getwd()), "dist", "tags", m+".html")
-			utils.EnsureDirExists(filepath.Dir(dest))
-			utils.CheckErr(err)
 
-			tag.Name = m
-			tag.Pages = append(tag.Pages, page)
-			tag.Dest = dest
-			tag.Title = string("Posts tagged ") + string('"') + tag.Name + string('"')
-			tag.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(dest)), filepath.Base(dest))
-			page.Tags = append(page.Tags, tag)
-			siteConfig.AllTags = append(siteConfig.AllTags, tag)
+			list.Pages = append(list.Pages, page)
+			list.Name = strings.ToUpper(string(filepath.Base(filepath.Dir(htmlPath))[0])) + filepath.Base(filepath.Dir(htmlPath))[1:]
+			list.Dest = dest
+			siteConfig.AllLists = append(siteConfig.AllLists, list)
 		}
+
+		if len(matter.Tags) > 0 {
+			for _, m := range matter.Tags {
+				var tag structs.Tag
+
+				for _, t := range siteConfig.AllTags {
+					if t.Name == m {
+						tag = t
+					}
+				}
+				dest := filepath.Join(utils.First(os.Getwd()), "dist", "tags", m+".html")
+				utils.EnsureDirExists(filepath.Dir(dest))
+				utils.CheckErr(err)
+
+				tag.Name = m
+				tag.Pages = append(tag.Pages, page)
+				tag.Dest = dest
+				tag.Title = string("Posts tagged ") + string('"') + tag.Name + string('"')
+				tag.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(dest)), filepath.Base(dest))
+				page.Tags = append(page.Tags, tag)
+				siteConfig.AllTags = append(siteConfig.AllTags, tag)
+			}
+		}
+
+		siteConfig.AllPages = append(siteConfig.AllPages, page)
+
+		utils.EnsureDirExists(filepath.Dir(htmlPath))
+		utils.CheckErr(err)
 	}
-
-	siteConfig.AllPages = append(siteConfig.AllPages, page)
-
-	utils.EnsureDirExists(filepath.Dir(htmlPath))
-	utils.CheckErr(err)
 }
 
 func getFrontmatter(data io.Reader) ([]byte, structs.Matter) {
@@ -102,5 +105,11 @@ func getFrontmatter(data io.Reader) ([]byte, structs.Matter) {
 	if matter.Date != "" {
 		utils.ValidateDate(matter.Date)
 	}
+
+	if matter.Draft == nil {
+		defaultDraftValue := true
+		matter.Draft = &defaultDraftValue
+	}
+
 	return content, matter
 }

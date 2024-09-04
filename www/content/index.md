@@ -1,5 +1,6 @@
 ---
 title: David Uzondu
+draft: false
 ---
 
 Hello there! Welcome to my website. I am a final year Computer Science student at Bayero University, Kano. I am interesting in Backend Development and Machine Learning especially with languages like Go and TypeScript. I love to write. You can check out some of my work at [Make Use Of](https://muo.com/author/david-uzondu).
