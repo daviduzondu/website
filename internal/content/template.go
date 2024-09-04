@@ -10,7 +10,7 @@ import (
 	"github.com/daviduzondu/website/internal/utils"
 )
 
-func ApplyTemplate(siteData *structs.SiteData, basePath string) {
+func ApplyTemplate(siteData *structs.SiteData, basePath string, outputPath string) {
 	for _, page := range siteData.AllPages {
 		var buf bytes.Buffer
 		var data struct {

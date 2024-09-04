@@ -81,6 +81,7 @@ func processMarkdown(dir, parent, fileName string, siteConfig *structs.SiteData)
 			tag.Name = m
 			tag.Pages = append(tag.Pages, page)
 			tag.Dest = dest
+			tag.Title = string("Posts tagged ") + string('"') + tag.Name + string('"')
 			tag.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(dest)), filepath.Base(dest))
 			page.Tags = append(page.Tags, tag)
 			siteConfig.AllTags = append(siteConfig.AllTags, tag)

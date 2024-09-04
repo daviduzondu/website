@@ -3,6 +3,7 @@ package utils
 import (
 	"bytes"
 	"errors"
+	"io"
 	"io/fs"
 	"log"
 	"net/url"
@@ -18,6 +19,44 @@ import (
 	"github.com/yuin/goldmark/parser"
 	"go.abhg.dev/goldmark/anchor"
 )
+
+func copyFile(src string, dst string) error {
+	srcFile, err := os.Open(src)
+	CheckErr(err)
+	defer srcFile.Close()
+
+	dstFile, err := os.Create(dst)
+	CheckErr(err)
+	defer dstFile.Close()
+
+	_, err = io.Copy(dstFile, srcFile)
+	CheckErr(err)
+
+	return nil
+}
+
+// Recursively copies the contents of the source directory onto the destination directory.
+func CopyDir(srcDir string, dstDir string) error {
+	EnsureDirExists(dstDir)
+
+	entries, err := os.ReadDir(srcDir)
+	CheckErr(err)
+
+	for _, entry := range entries {
+		srcPath := filepath.Join(srcDir, entry.Name())
+		dstPath := filepath.Join(dstDir, entry.Name())
+
+		if entry.IsDir() {
+			err := CopyDir(srcPath, dstPath)
+			CheckErr(err)
+		} else {
+			err := copyFile(srcPath, dstPath)
+			CheckErr(err)
+		}
+	}
+
+	return nil
+}
 
 func EnsureDirExists(dir string) {
 	_, err := os.Stat(dir)

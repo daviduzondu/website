@@ -22,6 +22,7 @@ type Tag struct {
 	Pages []Page
 	Name  string
 	Dest  string
+	Title string
 	Href  string
 }
 

@@ -18,8 +18,10 @@ func main() {
 	utils.EnsureDirExists(OutputPath)
 	os.RemoveAll(OutputPath)
 
-	contentPath := filepath.Join(BasePath, "/www/content/")
+	contentPath := filepath.Join(BasePath, "www", string(filepath.Separator), "content")
 	content.Traverse(contentPath, &siteData)
 	siteData.Year = time.Now().Year()
-	content.ApplyTemplate(&siteData, BasePath)
+	content.ApplyTemplate(&siteData, BasePath, OutputPath)
+	utils.CopyDir(filepath.Join(BasePath, "www", string(filepath.Separator), "public"), filepath.Join(OutputPath, "public"))
+
 }
