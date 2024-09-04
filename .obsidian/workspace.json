@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "100a4d26b5231633",
+        "id": "a29077a26c596746",
         "type": "tabs",
         "children": [
           {
-            "id": "73fd84bb6a354fdc",
+            "id": "4f1f0e27a031734e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -155,15 +155,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "73fd84bb6a354fdc",
+  "active": "4f1f0e27a031734e",
   "lastOpenFiles": [
-    "().md",
+    "www/content/index.md",
+    "www/content/_blog/sk-experience.md",
     "www/content/_blog/hng-11.md",
     "www/content/_blog/creating-spaces-dl.md",
-    "www/content/_blog/sk-experience.md",
+    "www/assets/stage-3.png",
+    "www/assets/Screenshot from 2024-09-04 14-28-29.png",
+    "().md",
     "image",
     "image/hng-11-1725458794782.jpeg",
-    "www/assets/Screenshot from 2024-09-04 14-28-29.png",
     "www/content/_blog/showcase.md",
     "dist/index.html",
     "dist/tags/javascript.html",
