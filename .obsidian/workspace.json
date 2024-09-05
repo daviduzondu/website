@@ -4,18 +4,61 @@
     "type": "split",
     "children": [
       {
-        "id": "2862815e284b33bd",
+        "id": "0cbba2f73e324cbb",
         "type": "tabs",
         "children": [
           {
-            "id": "b1f09912c8029579",
+            "id": "f5c65dea1261315a",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/david/Desktop/Coding/Projects/Web/website",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "bash",
+                    "name": "Linux Terminal",
+                    "platforms": {
+                      "darwin": false,
+                      "linux": true,
+                      "win32": false
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": true,
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": {
+                    "columns": 171,
+                    "data": "┌─[\u001b[32;1mdavid\u001b[0m][\u001b[32mpop-os\u001b[0m][\u001b[32;1m±\u001b[0m][hng-11 U:1 \u001b[31;1m✗\u001b[0m][\u001b[36m~/.../Web/website\u001b[0m]\r\n└─▪ ",
+                    "rows": 50
+                  }
+                }
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "c14c85d9e47361b2",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -52,16 +95,9 @@
                 "sortOrder": "alphabetical"
               }
             }
-          },
-          {
-            "id": "ba37c8b4d9434df6",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -76,33 +112,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9a558dc1a000f40d",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "072e63c91a419f7a",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "6657288f0618733a",
             "type": "leaf",
             "state": {
@@ -112,29 +121,13 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "25e82288f22f1f7c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "64f6415874262f27",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -144,11 +137,28 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "terminal:Open terminal": false
     }
   },
-  "active": "4114aa73441ab8f1",
+  "active": "c14c85d9e47361b2",
   "lastOpenFiles": [
+    "www/content/_blog/hng-11.md",
+    "www/assets/Screenshot from 2024-09-05 10-04-09.png",
+    "www/assets/Screenshot from 2024-09-05 10-03-48.png",
+    "www/assets/Screenshot from 2024-09-05 10-03-25.png",
+    "www/assets/Screenshot from 2024-08-31 14-49-25.png",
+    "www/assets/Screenshot from 2024-08-31 16-00-28.png",
+    "www/assets/Screenshot from 2024-08-31 17-54-54.png",
+    "www/content/_blog/creating-spaces-dl.md",
+    "().md",
+    "www/content/index.md",
+    "www/content/_blog/sk-experience.md",
+    "www/assets/stage-3.png",
+    "www/assets/Screenshot from 2024-09-04 14-28-29.png",
+    "image",
+    "image/hng-11-1725458794782.jpeg",
+    "www/content/_blog/showcase.md",
     "dist/index.html",
     "dist/tags/javascript.html",
     "dist/tags/internship.html",
@@ -161,7 +171,6 @@
     "www/content/_blog/~testing obsidian.md",
     "Untitled.md",
     "netlify.toml",
-    "www/content/_blog/testing-hack-md.md",
-    "www/content/_blog/sk-experience.md"
+    "www/content/_blog/testing-hack-md.md"
   ]
 }
