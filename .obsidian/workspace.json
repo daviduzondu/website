@@ -4,11 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "a29077a26c596746",
+        "id": "0cbba2f73e324cbb",
         "type": "tabs",
         "children": [
           {
-            "id": "4f1f0e27a031734e",
+            "id": "f5c65dea1261315a",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/david/Desktop/Coding/Projects/Web/website",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "bash",
+                    "name": "Linux Terminal",
+                    "platforms": {
+                      "darwin": false,
+                      "linux": true,
+                      "win32": false
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": true,
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": {
+                    "columns": 171,
+                    "data": "┌─[\u001b[32;1mdavid\u001b[0m][\u001b[32mpop-os\u001b[0m][\u001b[32;1m±\u001b[0m][hng-11 U:6 ?:6 \u001b[31;1m✗\u001b[0m][\u001b[36m~/.../Web/website\u001b[0m]\r\n└─▪ go run cmd/main.go && serve dist\r\n(node:2564372) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\r\n(Use `node --trace-deprecation ...` to show where the warning was created)\r\n\u001b[43;1m WARN \u001b[0m Checking for updates failed (use `--debug` to see full error)\r\n\r\n\u001b[32m   ┌───────────────────────────────────────────┐\r\n\u001b[0m   \u001b[32m│\u001b[0m                                           \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m   \u001b[32mServing!\u001b[0m                                \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m                                           \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m   \u001b[1m- Local:\u001b[0m    http://localhost:3000       \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m   \u001b[1m- Network:\u001b[0m  http://192.168.43.19:3000   \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m                                           \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m   \u001b[90mCopied local address to clipboard!\u001b[0m      \u001b[32m│\r\n\u001b[0m   \u001b[32m│\u001b[0m                                           \u001b[32m│\r\n   └───────────────────────────────────────────┘\r\n\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /blog/hng-11\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 200 in 33 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/stage-3.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-09-05%2010-03-48.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 4 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 6 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-09-05%2010-04-09.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-08-31%2014-49-25.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-08-31%2017-54-54.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-08-31%2016-00-28.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[36mGET /assets/Screenshot%20from%202024-09-04%2014-28-29.png\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 4 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 4 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 3 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 5 ms\r\n\u001b[39;44;1m HTTP \u001b[0m \u001b[2m9/5/2024 3:00:27 PM\u001b[0m \u001b[33m::1\u001b[0m \u001b[32mReturned 304 in 8 ms\r\n\u001b[0m^C\r\n\u001b[45;1m INFO \u001b[0m Gracefully shutting down. Please wait...\r\n┌─[\u001b[32;1mdavid\u001b[0m][\u001b[32mpop-os\u001b[0m][\u001b[32;1m±\u001b[0m][hng-11 U:6 ?:6 \u001b[31;1m✗\u001b[0m][\u001b[36m~/.../Web/website\u001b[0m]\r\n└─▪ git add ",
+                    "rows": 50
+                  }
+                }
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "c14c85d9e47361b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -56,16 +98,9 @@
                 "sortOrder": "alphabetical"
               }
             }
-          },
-          {
-            "id": "ba37c8b4d9434df6",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -80,35 +115,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9a558dc1a000f40d",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "www/content/_blog/hng-11.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "072e63c91a419f7a",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "www/content/_blog/hng-11.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "6657288f0618733a",
             "type": "leaf",
             "state": {
@@ -118,31 +124,13 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "25e82288f22f1f7c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "www/content/_blog/hng-11.md"
-              }
-            }
-          },
-          {
-            "id": "64f6415874262f27",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -152,18 +140,25 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "terminal:Open terminal": false
     }
   },
-  "active": "4f1f0e27a031734e",
+  "active": "f5c65dea1261315a",
   "lastOpenFiles": [
+    "www/content/_blog/hng-11.md",
+    "www/assets/Screenshot from 2024-09-05 10-04-09.png",
+    "www/assets/Screenshot from 2024-09-05 10-03-48.png",
+    "www/assets/Screenshot from 2024-09-05 10-03-25.png",
+    "www/assets/Screenshot from 2024-08-31 14-49-25.png",
+    "www/assets/Screenshot from 2024-08-31 16-00-28.png",
+    "www/assets/Screenshot from 2024-08-31 17-54-54.png",
+    "www/content/_blog/creating-spaces-dl.md",
+    "().md",
     "www/content/index.md",
     "www/content/_blog/sk-experience.md",
-    "www/content/_blog/hng-11.md",
-    "www/content/_blog/creating-spaces-dl.md",
     "www/assets/stage-3.png",
     "www/assets/Screenshot from 2024-09-04 14-28-29.png",
-    "().md",
     "image",
     "image/hng-11-1725458794782.jpeg",
     "www/content/_blog/showcase.md",
