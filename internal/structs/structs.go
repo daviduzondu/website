@@ -11,6 +11,7 @@ type SiteData struct {
 	GitHubRepository  string `json:"gh_repository"`
 	GitHubContentPath string `json:"gh_content_path"`
 	Description       string `json:"description"`
+	Favicon           string `json:"favicon"`
 	LastBuild         time.Time
 	BuildTime         string
 	Year              int

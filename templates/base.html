@@ -14,19 +14,21 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
  <head>
+  <link rel="icon" href="{{ .Site.Favicon }}" type="image/x-icon">
   <!-- Basic Meta Tags -->
   <meta property="og:title" content="{{ .Site.Title }}" />
   <meta property="og:description" content="{{ .Site.Description }}" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/46460041?v=4" />
   <meta property="og:url" content="{{ .Site.BaseUrl}}" />
   <meta property="og:type" content="website" />
+  <meta property="og:logo" content="{{ .Site.BaseUrl}}" />
 
   <!-- Optional Meta Tags -->
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:locale" content="en_US" />
+  <title>{{ $title }}</title>
  </head>
 
- <title>{{ $title }}</title>
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Spline+Sans:wght@300..700&display=swap');
 
