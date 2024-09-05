@@ -22,5 +22,5 @@ func main() {
 	content.Traverse(contentPath, &siteData)
 	siteData.Year = time.Now().Year()
 	content.ApplyTemplate(&siteData, BasePath, OutputPath)
-
+	utils.CopyDir(filepath.Join(BasePath, "www", "assets"), filepath.Join(OutputPath, "assets"))
 }

@@ -1,0 +1,18 @@
+{
+  "obsidian-footnotes:insert-autonumbered-footnote": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "O"
+    }
+  ],
+  "terminal:open-terminal.integrated.root": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "`"
+    }
+  ]
+}

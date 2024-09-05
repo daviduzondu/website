@@ -55,6 +55,12 @@
             "state": {
               "type": "graph",
               "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "www/content/_blog/hng-11.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -142,6 +148,7 @@
     }
   },
   "active": "c14c85d9e47361b2",
+  "active": "f5c65dea1261315a",
   "lastOpenFiles": [
     "www/content/_blog/hng-11.md",
     "www/assets/Screenshot from 2024-09-05 10-04-09.png",
