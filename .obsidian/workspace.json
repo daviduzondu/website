@@ -41,7 +41,7 @@
                   },
                   "serial": {
                     "columns": 171,
-                    "data": "┌─[\u001b[32;1mdavid\u001b[0m][\u001b[32mpop-os\u001b[0m][\u001b[32;1m±\u001b[0m][hng-11 ↑2 U:1 \u001b[31;1m✗\u001b[0m][\u001b[36m~/.../Web/website\u001b[0m]\r\n└─▪ ",
+                    "data": "┌─[\u001b[32;1mdavid\u001b[0m][\u001b[32mpop-os\u001b[0m][\u001b[32;1m±\u001b[0m][hng-11 U:1 \u001b[31;1m✗\u001b[0m][\u001b[36m~/.../Web/website\u001b[0m]\r\n└─▪ ",
                     "rows": 50
                   }
                 }
