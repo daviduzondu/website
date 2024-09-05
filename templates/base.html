@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+ {{ $title := "" }}
+ {{ if eq .Type "list" }}
+ {{ $title = .List.Name }}
+ {{ else if and (eq .Type "page") (ne .Page.Frontmatter.Title "David Uzondu") }}
+ {{ $title = .Page.Frontmatter.Title }}
+ {{ else if eq .Type "tag" }}
+ {{ $title = .Tag.Title }}
+ {{ end }}
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>{{if (eq .Type "list")}}{{.List.Name}} | David Uzondu
-  {{else}}
-   {{if (eq .Type "page")}}
-    {{.Page.Frontmatter.Title}} | David Uzondu
-  {{else}}
-   {{if (eq .Type "tag")}}
-    {{.Tag.Title}} | David Uzondu
-   {{end}}
-  {{end}}
-  {{end}}</title>
+
+ <head>
+  <!-- Basic Meta Tags -->
+  <meta property="og:title" content="{{ .Site.Title }}" />
+  <meta property="og:description" content="{{ .Site.Description }}" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/46460041?v=4" />
+  <meta property="og:url" content="{{ .Site.BaseUrl}}" />
+  <meta property="og:type" content="website" />
+
+  <!-- Optional Meta Tags -->
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:locale" content="en_US" />
+ </head>
+
+ <title>{{ $title }}</title>
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Spline+Sans:wght@300..700&display=swap');
 
@@ -232,4 +244,5 @@
  {{template "nav" .}}
  <main>{{block "content" .}}File not found{{end}}</main>
 </body>
+
 </html>
