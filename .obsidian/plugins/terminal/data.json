@@ -19,8 +19,8 @@
       "executable": "bash",
       "name": "Linux Terminal",
       "platforms": {
-        "linux": true,
         "darwin": false,
+        "linux": true,
         "win32": false
       },
       "pythonExecutable": "python3",

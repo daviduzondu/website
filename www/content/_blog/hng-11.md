@@ -86,5 +86,4 @@ I will be returning for HNG12. With the knowledge I have gathered now about the 
 
 ![A screenshot from the HNG11 Slack Workspace](../../assets/Screenshot%20from%202024-09-04%2014-28-29.png)
 The moment Mark Essien confirmed that the weeks of suffering and pain was now over.
-
 [^1]: I learnt how to write better unit tests after this event.
