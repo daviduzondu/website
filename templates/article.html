@@ -8,6 +8,7 @@
   </div>
   <div class="post-tags">
    {{ if .Page.Tags }}
+   <span>Filed Under</span>
    {{ range .Page.Tags }}
    <a href="{{ .Href }}" class="post-tag">{{ .Name }}</a>
    {{ end }}

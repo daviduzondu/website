@@ -114,7 +114,7 @@ func ConvertToHtml(content []byte) []byte {
 		&anchor.Extender{Position: anchor.Before},
 		extension.Footnote,
 		highlighting.NewHighlighting(
-			highlighting.WithStyle("gruvbox"),
+			highlighting.WithStyle("vs"),
 		),
 	)).Convert(content, &buf)
 
