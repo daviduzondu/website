@@ -44944,8 +44944,8 @@ js-sha256/src/sha256.js:
 
 feather-icons/dist/feather.js:
   (*!
-    Copyright (c) 2016 Jed Watson.
+    Copyright (c) 2016 Jed Wajson.
     Licensed under the MIT License (MIT), see
-    http://jedwatson.github.io/classnames
+    http://jedwajson.github.io/classnames
   *)
 */

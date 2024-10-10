@@ -93,7 +93,7 @@ yt-dlp <m3u8_url>
 ## Automating the entire thing with a CLI
 What do you do when you can't access a Twitter Space without logging in and the official Twitter API costs nearly double your country's minimum wage? Naturally, you turn to web scraping. I started the project and created a `Downloader` class that will be instantiated later by the Command Line Interface (CLI).
 
-```typescript
+```ts
 export class Downloader implements DownloaderInterface {
   private username: string;
   private password: string;
@@ -153,7 +153,7 @@ Twitter has this (weird?) login system, where logging in involves completing a s
 
 To automate the login system, a guest token is required. The `getGuestToken` method scrapes the Twitter login page using Cheerio and retrieves the `<script>` element that sets the cookie. The guest token (`gt=`) is then extracted using regular expressions:
 
-```typescript
+```ts
   private async getGuestToken(): Promise<string> {
     let scriptText = '';
     this.$('script').each((_: number, element: cheerio.Element) => {
@@ -172,7 +172,7 @@ To automate the login system, a guest token is required. The `getGuestToken` met
 
 `getGuestToken` is used in the `login` method like so. This code logins into the account by performing these subtasks in the sequence: `'' -> LoginJsInstrumentationSubtask -> LoginEnterUserIdentifierSSO -> AccountDuplicationCheck`. If the operation is successful, I will get an authentication token and a CSRF token [^1].
 
-```typescript
+```ts
   async login() {
     try {
       const response: AxiosResponse = await getRequest(CONSTANTS.URL_BASE, this.headers);
@@ -257,7 +257,7 @@ To automate the login system, a guest token is required. The `getGuestToken` met
 ```
 
 If nothing goes wrong, the `generateAudio` method is invoked. 
-```typescript
+```ts
   async generateAudio() {
     this.playlist = await this.getPlaylist();
     this.chunksUrls = this.parsePlaylist();
@@ -267,7 +267,7 @@ If nothing goes wrong, the `generateAudio` method is invoked.
   }
 ```
 In this method, I call `getPlaylist` to retrieve the playlist and store it to prevent unnecessary network calls [^2].
-```typescript
+```ts
  private async getPlaylist() {
     let playlistPath: string = path.join(this.storagePath + "/" + "playlist.m3u8");
     let playlist: string;
@@ -286,7 +286,7 @@ In this method, I call `getPlaylist` to retrieve the playlist and store it to pr
 ```
 
 Next, the downloaded playlist is parsed with the [m3u8-parser package](https://www.npmjs.com/package/m3u8-parser). 
-```typescript
+```ts
   private parsePlaylist(): string[] {
     const parser = new m3u8Parser.Parser();
     parser.push(this.playlist);
@@ -296,7 +296,7 @@ Next, the downloaded playlist is parsed with the [m3u8-parser package](https://w
   }
 ```
 This makes it easier to retrieve the URL for each audio chunk. Next, each chunk URL is fed into `downloadSegments` where they are downloaded to the disk.
-```typescript
+```ts
   private async downloadSegments(
     chunks: string[],
     retryCount: Record<string, number> = {},
@@ -343,7 +343,7 @@ Finally, `convertSegmentsToMp3` converts each chunk to the `.mp3` audio format a
 
 I read each downloaded chunk and wrote it into the PassThrough Duplex stream. With this, fluent-ffmpeg can read the stream change the format from `.aac` to `.mp3`, setting the audio codec as `libmp3lame` with a 44.1Khz sample rate frequency.
 
-```typescript
+```ts
   private async convertSegmentsToMp3() {
     await fs.ensureDir(path.join(this.storagePath, 'out/'));
     const passThroughStream = new PassThrough();
@@ -385,7 +385,7 @@ I read each downloaded chunk and wrote it into the PassThrough Duplex stream. Wi
 
 With the `Downloader` class set up, all that's left is to create a CLI that will instantiate the class. This CLI uses the [Commander](https://www.npmjs.com/commander) package, although I feel it is a bit overkill for such a small project. But I am keeping it anyways.
 
-```typescript
+```ts
 import { Command } from 'commander';
 import { Downloader } from '../index.js';
 import { DownloaderOptions } from '../types.js';
