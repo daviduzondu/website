@@ -111,7 +111,7 @@ func ConvertToHtml(content []byte) []byte {
 	err := goldmark.New(goldmark.WithParserOptions(parser.WithAutoHeadingID()), goldmark.WithExtensions(
 		extension.GFM,
 		figure.Figure,
-		&anchor.Extender{Position: anchor.Before},
+		&anchor.Extender{Position: anchor.After},
 		extension.Footnote,
 		highlighting.NewHighlighting(
 			highlighting.WithStyle("dracula"),
