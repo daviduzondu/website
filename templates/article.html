@@ -1,5 +1,5 @@
 {{ define "content" }}
-<article class="{{ if eq .Page.SrcName " index.md" }}hide-anchors{{end}}">
+<article class="{{ if eq .Page.SrcName "index.md" }}hide-anchors{{end}}">
  <h1>{{ .Page.Frontmatter.Title }}</h1>
  {{ if .Page.Frontmatter.Date }}
  <div class="post-metadata">
