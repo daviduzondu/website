@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
  {{ $title := "" }}
  {{ if eq .Type "list" }}
@@ -46,8 +47,8 @@
 
   .post-item {
    display: grid;
-   grid-template-columns: 30% 70%;
    gap: 5px;
+   grid-template-columns: 1fr;
    margin-bottom: 30px;
   }
 
@@ -57,10 +58,88 @@
 
   .post-item span {
    display: flex;
-   font-size: 17px;
+   font-size: 1em;
    align-items: center;
   }
 
+  .series-card {
+   display: flex;
+   flex-direction: column;
+   border: 1.5px dashed rgb(0 122 208);
+   border-radius: 5px;
+   gap: 10px;
+   font-size: 18px;
+   background: rgb(255, 254, 253);
+   padding: 10px 10px 0px 10px;
+  }
+
+  .series-card ul {
+   margin: 0;
+  }
+
+  .series-card div {
+   background-color: rgb(0 122 208);
+   color: white;
+   margin: -10px;
+   font-size: 15px;
+   padding: 10px;
+  }
+
+  .series-post-date {
+   font-size: 14px;
+   font-weight: normal;
+   color: var(--gray);
+  }
+
+  .series-card ul {
+   margin: 10px 0px 10px 0px;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+  }
+
+  .series-card li {
+   list-style: none;
+   font-size: 18px;
+   font-weight: 500;
+   padding: 5px 0px 5px 0px;
+   width: 100%;
+
+  }
+
+  .series-card li a {
+   text-decoration: none;
+   font-weight: normal;
+   text-decoration: underline;
+  }
+
+  .series-card li a:hover {
+   color: white;
+  }
+
+
+  .series-card li .active {
+   display: flex;
+   align-items: center;
+   font-weight: 600;
+   color: rgb(17, 80, 125);
+   text-decoration: none;
+  }
+
+  .series-card li:has(.active) {
+   pointer-events: none;
+  }
+
+  .series-card li .active::before {
+   content: "▸";
+   margin-right: 5px;
+   color: rgb(17, 80, 125);
+   text-decoration: none;
+  }
+
+  .content {
+   margin-top: 30px;
+  }
 
   h1 {
    margin: 30px 0px 20px 0px;
@@ -68,6 +147,7 @@
 
   .post-date {
    font-size: 1em;
+   background-color: transparent;
   }
 
   body {
@@ -81,12 +161,12 @@
    margin: 0 auto;
   }
 
-  a.anchor{
+  a.anchor {
    text-decoration: none;
-    font-size: smaller;
-    margin-left: 3px;
-    font-family: sans-serif;
-    color: rgb(17, 80, 125);
+   font-size: smaller;
+   margin-left: 3px;
+   font-family: sans-serif;
+   color: rgb(17, 80, 125);
   }
 
   nav a {
@@ -113,9 +193,8 @@
     margin: 0px;
    }
 
-   .post-item {
-    grid-template-columns: 1fr;
-    margin-bottom: 30px;
+   .series-post-date {
+    display: none;
    }
   }
 

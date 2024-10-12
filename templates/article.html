@@ -1,5 +1,5 @@
 {{ define "content" }}
-<article class="{{ if eq .Page.SrcName "index.md" }}hide-anchors{{end}}">
+<article class="{{ if eq .Page.SrcName " index.md" }}hide-anchors{{end}}">
  <h1>{{ .Page.Frontmatter.Title }}</h1>
  {{ if .Page.Frontmatter.Date }}
  <div class="post-metadata">
@@ -16,7 +16,25 @@
   </div>
  </div>
  {{ end }}
- <div>
+ {{ if .Page.Series }}
+ <div class="content">
+  <div class="series-card">
+   <div style="font-weight: 500;">This article is part of my "{{ .Page.Series }}" series</div>
+
+   <ul>
+    {{ $currentPage := .Page }}
+    {{ range FilterPages .Site.AllPages .Page.Series }}
+    <li style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+     <a href="{{ .Href }}" class="{{ if eq .Href $currentPage.Href }}active{{ end }}">
+      {{ .Frontmatter.Title }}
+     </a>
+     <span class="series-post-date"> {{ .Frontmatter.Date }}</span>
+    </li>
+    {{ end }}
+   </ul>
+   {{ end }}
+
+  </div>
   {{ .Page.Html }}
  </div>
  {{ if ne .Page.SrcName "index.md" }}

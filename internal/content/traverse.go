@@ -53,7 +53,7 @@ func processMarkdown(dir, parent, fileName string, siteConfig *structs.SiteData)
 		page.SrcName = fileName
 		page.Active = filepath.Dir(page.Href)
 
-		if strings.HasPrefix(filepath.Base(filepath.Dir(mdPath)), "_") {
+		if strings.HasPrefix(filepath.Base(filepath.Dir(mdPath)), "_") || page.Series != "" {
 			var dest string = filepath.Join(strings.Replace(filepath.Dir(htmlPath), fileName, "", 1), "index.html")
 			for _, l := range siteConfig.AllLists {
 				if l.Dest == dest {

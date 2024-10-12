@@ -63,9 +63,19 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string, outputPath strin
 		data.Site = *siteData
 		data.Type = "page"
 
-		tmpl, err := template.ParseFiles(filepath.Join(basePath, "templates", "base.html"), filepath.Join(basePath, "templates", "partials", "nav.html"), filepath.Join(basePath, "templates", "article.html"), filepath.Join(basePath, "templates", "partials", "github-page.html"))
+		tmpl := template.New("base.html").Funcs(template.FuncMap{
+			"FilterPages": FilterPagesBySeries, // Register the custom function
+		})
+
+		// Parse the template files
+		tmpl, err := tmpl.ParseFiles(
+			filepath.Join(basePath, "templates", "base.html"),
+			filepath.Join(basePath, "templates", "partials", "nav.html"),
+			filepath.Join(basePath, "templates", "article.html"),
+			filepath.Join(basePath, "templates", "partials", "github-page.html"),
+		)
 		utils.CheckErr(err)
-		err = tmpl.Execute(&buf, data)
+		err = tmpl.ExecuteTemplate(&buf, "base.html", data)
 		utils.CheckErr(err)
 		err = os.WriteFile(page.Dest, buf.Bytes(), os.ModePerm)
 		utils.CheckErr(err)
@@ -107,4 +117,14 @@ func ApplyTemplate(siteData *structs.SiteData, basePath string, outputPath strin
 		err = os.WriteFile(tag.Dest, buf.Bytes(), os.ModePerm)
 		utils.CheckErr(err)
 	}
+}
+
+func FilterPagesBySeries(pages []structs.Page, series string) []structs.Page {
+	var filteredPages []structs.Page
+	for _, page := range pages {
+		if page.Series == series {
+			filteredPages = append(filteredPages, page)
+		}
+	}
+	return filteredPages
 }
