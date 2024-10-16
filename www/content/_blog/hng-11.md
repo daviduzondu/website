@@ -14,8 +14,8 @@ In Stage 1, I had to set up a web server that exposes an API endpoint that will 
 
 ```json
 {
-  "client_ip": "127.0.0.1", // The IP address of the requester
-  "location": "New York", // The city of the requester
+  "client_ip": "127.0.0.1",
+  "location": "New York", 
   "greeting": "Hello, Mark!, the temperature is 11 degrees Celcius in New York"
 }
 ```
