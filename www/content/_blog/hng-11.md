@@ -8,7 +8,7 @@ date: 4 September 2024
 ---
 If you are familiar with the Nigerian Tech Space, then you should have heard about HNG by now. It's a 2-month intensive program where thousands of people from around the world (mostly Nigerians) come together to put their skills to the test. There are 10 stages in HNG. Each week, you are given a task that you must complete to move on to the next stage. To qualify as a finalist, you must make it to stage 10. HNG offers different tracks to choose including Backend, Frontend, Data Analysis, etc. You can choose multiple tracks if you're confident you can handle the workload. I chose the Backend track.
 
-For HNG 11, I joined a Slack Workspace with 16,000+ other humans. We were added to the Stage 0 channel where we were given our first task. For Stage 0, the interns in the backend track were asked to write an article detailing a recent backend problem we solved. Our [submission](sk-experience.md) must contain at least two back links to HNG internship websites. The tasks in stage 0-1 were easy enough. I mean, the bar was low (for me), so I was able to breeze past them. 
+For HNG 11, I joined a Slack Workspace with 16,000+ other humans. We were added to the Stage 0 channel where we were given our first task. For Stage 0, the interns in the backend track were asked to write an article detailing a recent backend problem we solved. Our [submission](sk-experience.html) must contain at least two back links to HNG internship websites. The tasks in stage 0-1 were easy enough. I mean, the bar was low (for me), so I was able to breeze past them. 
 
 In Stage 1, I had to set up a web server that exposes an API endpoint that will return the following JSON when a **GET** request is made to `/api/hello?vistor_name="Mark"`. 
 
