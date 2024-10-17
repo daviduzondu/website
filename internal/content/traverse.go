@@ -50,8 +50,9 @@ func processMarkdown(dir, parent, fileName string, siteConfig *structs.SiteData)
 		page.Dest = htmlPath
 		page.Href = filepath.Join(string(filepath.Separator), filepath.Base(filepath.Dir(htmlPath)), filepath.Base(htmlPath))
 		page.PageUrlOnGitHub = utils.GetPageUrlOnGitHub(mdPath, siteConfig)
-		page.SrcName = fileName
+		page.SrcName = strings.Replace(fileName, ".md", "", 1)
 		page.Active = filepath.Dir(page.Href)
+		println(page.SrcName)
 
 		if strings.HasPrefix(filepath.Base(filepath.Dir(mdPath)), "_") || page.Series != "" {
 			var dest string = filepath.Join(strings.Replace(filepath.Dir(htmlPath), fileName, "", 1), "index.html")

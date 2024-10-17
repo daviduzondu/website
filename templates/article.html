@@ -1,5 +1,5 @@
 {{ define "content" }}
-<article class="{{ if eq .Page.SrcName "index.md" }}hide-anchors{{end}}">
+<article class="{{ if eq .Page.SrcName " index" }}hide-anchors{{end}}">
  <h1>{{ .Page.Frontmatter.Title }}</h1>
  {{ if .Page.Frontmatter.Date }}
  <div class="post-metadata">
@@ -24,7 +24,7 @@
    <ul>
     {{ $currentPage := .Page }}
     {{ range FilterPages .Site.AllPages .Page.Series }}
-    <li style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <li style="display: flex; justify-content: space-between; align-items: center; ">
      <a href="{{ .Href }}" class="{{ if eq .Href $currentPage.Href }}active{{ end }}">
       {{ .Frontmatter.Title }}
      </a>
@@ -37,7 +37,7 @@
   </div>
   {{ .Page.Html }}
  </div>
- {{ if ne .Page.SrcName "index.md" }}
+ {{ if ne .Page.SrcName "index" }}
  {{ template "github-page" . }}
  {{ end }}
 </article>

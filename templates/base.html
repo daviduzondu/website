@@ -33,6 +33,11 @@
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Spline+Sans:wght@300..700&display=swap');
 
+  @view-transition {
+   navigation: auto;
+  }
+
+  
   * {
    padding: 0;
    box-sizing: border-box;
@@ -73,10 +78,6 @@
    padding: 10px 10px 0px 10px;
   }
 
-  .series-card ul {
-   margin: 0;
-  }
-
   .series-card div {
    background-color: rgb(0 122 208);
    color: white;
@@ -98,18 +99,18 @@
    gap: 15px;
   }
 
+
   .series-card li {
    list-style: none;
    font-weight: 500;
    padding: 5px 0px 5px 0px;
    width: 100%;
-
   }
 
   .series-card li a {
    /* text-decoration: none; */
    font-weight: normal;
-   font-size: 15.5px;
+   /* font-size: 15.5px; */
   }
 
   .series-card li a:hover {
@@ -123,11 +124,18 @@
    font-weight: 600;
    color: rgb(17, 80, 125);
    text-decoration: none;
+
   }
-  
+
 
   .series-card li:has(.active) {
    pointer-events: none;
+   border: dashed 1px;
+   border-radius: 5px;
+   padding: 5px;
+   margin-left: -5px;
+   background: #4eb2fa42;
+   width: calc(100% + 10px);
   }
 
   .series-card li .active::before {
@@ -137,7 +145,7 @@
   }
 
   .content {
-   margin-top: 30px;
+   margin-top: 20px;
   }
 
   h1 {
