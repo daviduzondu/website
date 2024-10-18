@@ -306,7 +306,7 @@ code {
  font-optical-sizing: auto;
 }
 
-* code {
+p code, li code {
  font-size: 15px;
  background-color: white;
  padding: 3px;
