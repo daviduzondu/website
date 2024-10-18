@@ -58,6 +58,8 @@
  color: rgb(17, 80, 125);
  gap: 15px;
  transition: 200ms;
+ box-shadow: 0px 2px 0px 0px;
+
 }
 
 .project-card-header {
