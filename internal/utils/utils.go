@@ -3,12 +3,15 @@ package utils
 import (
 	"bytes"
 	"errors"
+	"fmt"
+	"html/template"
 	"io"
 	"io/fs"
 	"log"
 	"net/url"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"time"
 
@@ -18,6 +21,7 @@ import (
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"go.abhg.dev/goldmark/anchor"
 )
 
@@ -73,8 +77,13 @@ func EnsureDirExists(dir string) {
 	}
 }
 
+var ErrMessage = ""
+
 func CheckErr(err error) {
 	if err != nil {
+		if ErrMessage != "" {
+			fmt.Println(ErrMessage)
+		}
 		panic(err)
 	}
 }
@@ -106,9 +115,22 @@ func GetPageUrlOnGitHub(dir string, siteData *structs.SiteData) string {
 	return url
 }
 
+func extractProps(propString string) map[string]string {
+	props := make(map[string]string)
+	// Regex to extract key="value" pairs
+	re := regexp.MustCompile(`(\w+)="([^"]*)"`)
+
+	matches := re.FindAllStringSubmatch(propString, -1)
+	for _, match := range matches {
+		props[match[1]] = match[2]
+	}
+
+	return props
+}
+
 func ConvertToHtml(content []byte) []byte {
 	var buf bytes.Buffer
-	err := goldmark.New(goldmark.WithParserOptions(parser.WithAutoHeadingID()), goldmark.WithExtensions(
+	err := goldmark.New(goldmark.WithParserOptions(parser.WithAutoHeadingID()), goldmark.WithRendererOptions(html.WithUnsafe()), goldmark.WithExtensions(
 		extension.GFM,
 		figure.Figure,
 		&anchor.Extender{Position: anchor.After},
@@ -121,5 +143,34 @@ func ConvertToHtml(content []byte) []byte {
 	if err != nil {
 		log.Fatal("Something went wrong while trying to parse Markdown.", err)
 	}
-	return buf.Bytes()
+
+	// Load the snippets file
+
+	htmlContent := buf.String()
+
+	snippetRegex := regexp.MustCompile(`<!--\s*([\w-]+)\s*(.*?)-->`)
+
+	tmpl, err := template.ParseFiles(filepath.Join(First(os.Getwd()), "templates", "snippets", "snippets.html"))
+	CheckErr(err)
+
+	finalHtml := snippetRegex.ReplaceAllStringFunc(htmlContent, func(match string) string {
+		// Extract snippet name and props
+		snippetMatch := snippetRegex.FindStringSubmatch(match)
+		snippetName := snippetMatch[1]
+		propString := snippetMatch[2]
+		props := extractProps(propString)
+
+		// Use template to render the snippet's HTML
+		var snippetBuf bytes.Buffer
+		fmt.Println(snippetName, props)
+		if err := tmpl.ExecuteTemplate(&snippetBuf, snippetName, props); err != nil {
+			log.Printf("Error rendering snippet %s: %v", snippetName, err)
+			return match // Return the original comment if rendering fails
+		}
+
+		fmt.Println(snippetBuf.String())
+		return snippetBuf.String() // Return the rendered HTML
+	})
+
+	return []byte(finalHtml)
 }
