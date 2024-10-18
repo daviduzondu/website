@@ -374,17 +374,23 @@
 <body>
  <div class="loading">
   <div class="progress-bar"></div>
-</div>
+ </div>
  {{template "nav" .}}
  <main>{{block "content" .}}File not found{{end}}</main>
 
  <script>
   window.onload = function () {
+   console.log("Loaded")
    document.querySelector(".loading").style.display = "none";
   };
 
+  window.onunload = function () {
+   console.log("Unloaded")
+   document.querySelector(".loading").style.display = "none";
+  }
+
   document.querySelectorAll('a').forEach(entry => {
-   if (!entry.href.includes("#") && entry.href.includes(location.host)){
+   if (!entry.href.includes("#") && entry.href.includes(location.host)) {
     entry.addEventListener("click", e => {
      console.log(document.querySelector(".loading").style)
      document.querySelector(".loading").style.display = "block"
