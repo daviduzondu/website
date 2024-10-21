@@ -43,14 +43,13 @@
    document.querySelector(".loading").style.display = "none";
   };
 
-  window.onunload = function () {
+  window.addEventListener('pagehide', function () {
    document.querySelector(".loading").style.display = "none";
-  }
+  })
 
   document.querySelectorAll('a').forEach(entry => {
    if (!entry.href.includes("#") && entry.href.includes(location.host)) {
     entry.addEventListener("click", e => {
-     console.log(document.querySelector(".loading").style)
      document.querySelector(".loading").style.display = "block"
     });
    }

@@ -162,13 +162,11 @@ func ConvertToHtml(content []byte) []byte {
 
 		// Use template to render the snippet's HTML
 		var snippetBuf bytes.Buffer
-		fmt.Println(snippetName, props)
 		if err := tmpl.ExecuteTemplate(&snippetBuf, snippetName, props); err != nil {
 			log.Printf("Error rendering snippet %s: %v", snippetName, err)
 			return match // Return the original comment if rendering fails
 		}
 
-		fmt.Println(snippetBuf.String())
 		return snippetBuf.String() // Return the rendered HTML
 	})
 
