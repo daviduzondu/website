@@ -9,10 +9,6 @@ date: 28 June 2024
 ![virgin api consumer vs chad independent scraper](https://i.imgur.com/j4gD4fw.jpg)
 A meme I found on 4chan 
 
-Hello, My name is David Uzondu and I am a final year Computer Science student at Bayero University Kano. I was recently approved for the back-end track on the HNG internship program.
-
-One reason I am excited to participate in the [HNG internship program](https://hng.tech/internship) is to gain hands-on experience and deepen my skills in back-end development. This opportunity will work on real-world projects, learn best practices, and collaborate with industry professionals. I also signed up for [HNG Premium](https://hng.tech/premium) which will give me access to exclusive opportunities like certificates, reference letters, and the latest job openings.
-
 A few weeks ago, I wanted to listen to a Twitter Space conversation but had network issues. I noticed the space was recorded, so I bookmarked the link to return when my connection was stable. 
 
 The next day, I tried to listen again, but the Twitter app wouldn’t load the space, which frustrated me. Since Twitter doesn’t allow downloading recorded spaces for later, I decided to use `yt-dlp`—a command-line tool that downloads media from sites like YouTube, Vimeo, and Twitter. However, there was a bug in the version of `yt-dlp` installed on my machine that caused the program to crash whenever I tried to download a space.
