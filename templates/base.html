@@ -5,7 +5,7 @@
  {{ $title := "" }}
  {{ if eq .Type "list" }}
  {{ $title = .List.Name }}
- {{ else if and (eq .Type "page") (ne .Page.Frontmatter.Title "David Uzondu") }}
+ {{ else if eq .Type "page" }}
  {{ $title = .Page.Frontmatter.Title }}
  {{ else if eq .Type "tag" }}
  {{ $title = .Tag.Title }}
