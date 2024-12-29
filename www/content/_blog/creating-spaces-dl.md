@@ -7,7 +7,7 @@ date: 28 June 2024
 ---
 
 ![virgin api consumer vs chad independent scraper](https://i.imgur.com/j4gD4fw.jpg)
-A meme I found on 4chan 
+Very funny
 
 A few weeks ago, I wanted to listen to a Twitter Space conversation but had network issues. I noticed the space was recorded, so I bookmarked the link to return when my connection was stable. 
 
