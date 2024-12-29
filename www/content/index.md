@@ -7,7 +7,7 @@ Hello there! Welcome to my website. I am a final year Computer Science student a
 
 ## Contact
 
-You can reach out to me via email at daviduzondu [at] duck [dot] com. If you want something less formal, check out my [Twitter](https://twitter.com/mrdaviduzondu) or my [GitHub](https://github.com/daviduzondu).
+You can reach out to me via email at daviduzondu [at] duck [dot] com. If you want something less formal, check out my [Twitter](https://twitter.com/davidcuzondu) or my [GitHub](https://github.com/daviduzondu).
 
 ## Projects
 
