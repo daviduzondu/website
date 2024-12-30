@@ -1,18 +1,27 @@
 {{define "content"}}
-<h1>{{ .List.Name }}
-</h1>
+<div style="display: flex; align-items: center; gap:10px;">
+ <h1>{{ .List.Name }}</h1>
+ <a href="/blog.xml">
+  <img src="/assets/rss.png" width="20" height="20" />
+ </a>
+</div>
 
 <p>{{ .List.Description }}</p>
- {{range .List.Pages }}
+{{range .List.Pages }}
 
- 
- <div class="post-item">
-  <span>{{ .Frontmatter.Date }}</span>
-  <p style="margin: 0">
-   <a href="{{ .Href }}">
-    {{ .Frontmatter.Title }}
-   </a>
-  </p>
+
+<div class="post-item">
+ <div style="display:flex; align-items:center; gap:2px;">
+  <span style="font-size: 1em;">{{ .Frontmatter.Date }}</span>
+  {{if .Series}}
+  <span style="font-size: 0.8em">&nbsp;&nbsp;•&nbsp;&nbsp; From my "{{.Series}}" series</span>
+  {{end}}
  </div>
- {{end}}
+ <p style="margin: 0">
+  <a href="{{ .Href }}">
+   {{ .Frontmatter.Title }}
+  </a>
+ </p>
+</div>
+{{end}}
 {{end}}

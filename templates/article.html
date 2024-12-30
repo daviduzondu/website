@@ -17,9 +17,11 @@
  {{ end }}
  {{ if .Page.Series }}
  <div class="content">
-  <div style="font-weight: 500;" class="series-header">This article is part of my "{{ .Page.Series }}" series
+  <div style="font-weight: 500;" class="series-header">Posts in the "{{ .Page.Series }}" series
 
-   <img src="/assets/rss.png" width="20" height="20" />
+   <a href="/series/learning-go.xml">
+    <img src="/assets/rss.png" width="20" height="20" />
+   </a>
   </div>
   <div class="series-card">
 
