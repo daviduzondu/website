@@ -1,7 +1,0 @@
-[
-  {
-    "name": "Build Website",
-    "path": "/usr/local/go cmd/main.go",
-    "showOnBottomBar": true
-  }
-]
