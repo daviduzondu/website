@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"time"
@@ -12,9 +13,19 @@ import (
 
 var BasePath = utils.First(os.Getwd())
 var OutputPath = filepath.Join(BasePath, "dist")
+var Version = "1.0"
 
 func main() {
-	siteData := config.LoadConfig(filepath.Join(BasePath, "config.json"))
+	var configPath = os.Getenv("SITE_CONFIG")
+	fmt.Println("StaticBuilder Version: ", Version)
+	fmt.Println("Loading config from", configPath)
+	path := configPath
+	if path == "" {
+		path = filepath.Join(BasePath, "config.json")
+	}
+
+	siteData := config.LoadConfig(path)
+
 	utils.EnsureDirExists(OutputPath)
 	os.RemoveAll(OutputPath)
 

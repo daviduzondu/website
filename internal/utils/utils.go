@@ -46,6 +46,11 @@ func copyFile(src string, dst string) error {
 	return nil
 }
 
+func FileExists(filename string) bool {
+	_, err := os.Stat(filename)
+	return !os.IsNotExist(err)
+}
+
 // Recursively copies the contents of the source directory onto the destination directory.
 func CopyDir(srcDir string, dstDir string) error {
 	EnsureDirExists(dstDir)

@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "57e30f1270f49ebb",
+    "type": "split",
+    "children": [
+      {
+        "id": "2fa9858b032aa919",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4c59041baa7747fc",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "www/.obsidian/app.json",
+                "bFile": "www/.obsidian/app.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: app.json"
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3f9e4d9258f2d161",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f07a835b4f50a54",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a072a20f6ecd21ce",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7b64a93335200b71",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "363aa712ade7546f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8e4a5ad3f1b74a90",
+    "type": "split",
+    "children": [
+      {
+        "id": "e81096f782884efc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23b59fbb7399bdf8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/_blog/(Learning React Native by Building a HN Client)/rn-intro.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for rn-intro"
+            }
+          },
+          {
+            "id": "f3330cf66157dd73",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/_blog/(Learning React Native by Building a HN Client)/rn-intro.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from rn-intro"
+            }
+          },
+          {
+            "id": "db7e31468119b34f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "01920d426c58d852",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "1855f4df89738de0",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Shell commands: Custom variables"
+            }
+          },
+          {
+            "id": "a6a438ec204ae262",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Shell commands: Custom variables"
+            }
+          },
+          {
+            "id": "77451d9a1dc6beb3",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-shellcommands:Shell commands: Custom variables": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "4c59041baa7747fc",
+  "lastOpenFiles": [
+    "content/index.md",
+    "assets/headshot.jpeg",
+    "assets/rss.png",
+    "content/404.md",
+    "content/_blog/orm.md",
+    "Untitled.md",
+    "content/_blog/creating-spaces-dl.md",
+    "content/template.md.md",
+    "content/_blog/(Learning React Native by Building a HN Client)/rn-intro.md"
+  ]
+}
